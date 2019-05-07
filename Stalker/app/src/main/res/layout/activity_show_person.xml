@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".showPersonActivity">
+
+    <TextView
+        android:id="@+id/tv_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/firstNameKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_fnResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/lastNameKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_lnResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/ageKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_ageResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/jobKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_jobResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/birthdayKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_birthdayResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/phoneKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_phoneResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:text="@string/desctiprionKey"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_descriptionResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>

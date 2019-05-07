@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stalker</string>
+    <string name="new_key">Novo</string>
+    <string name="list_key">Listar</string>
+    <string name="title_activity_lltest">Stalker</string>
+    <string name="firstNameKey">Nome</string>
+    <string name="lastNameKey">Sobrenome</string>
+    <string name="ageKey">Idade</string>
+    <string name="jobKey">Emprego</string>
+    <string name="birthdayKey">Aniversário</string>
+    <string name="phoneKey">Telefone</string>
+    <string name="desctiprionKey">Descrição</string>
+    <string name="saveKey">Salvar</string>
+    <string name="cancelKey">Cancelar</string>
+</resources>

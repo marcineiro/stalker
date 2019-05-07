@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Stalker</string>
+    <string name="new_key">New</string>
+    <string name="list_key">List</string>
+    <string name="title_activity_lltest">Stalker</string>
+    <string name="firstNameKey">First Name</string>
+    <string name="lastNameKey">Last Name</string>
+    <string name="ageKey">Age</string>
+    <string name="jobKey">Job</string>
+    <string name="birthdayKey">Birthday</string>
+    <string name="phoneKey">Phone</string>
+    <string name="desctiprionKey">Description</string>
+    <string name="saveKey">Save</string>
+    <string name="cancelKey">Cancel</string>
+</resources>
