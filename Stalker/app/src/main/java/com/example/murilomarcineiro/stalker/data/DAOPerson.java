@@ -9,7 +9,11 @@ public class DAOPerson {
     private ArrayList<Person> people;
 
     private DAOPerson(){
-        people = new ArrayList<>();
+        this.people = new ArrayList<>();
+        ArrayList<Object> list =  Empacotamento.pull("stalked.dat");
+        for (Object item : list) {
+            this.people.add((Person)item);
+        }
     }
 
     public static DAOPerson getINSTANCE(){

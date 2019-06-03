@@ -3,6 +3,7 @@ package com.example.murilomarcineiro.stalker;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.murilomarcineiro.stalker.model.Person;
@@ -16,6 +17,7 @@ public class showPersonActivity extends AppCompatActivity {
     private TextView tv_birthdayResult;
     private TextView tv_phoneResult;
     private TextView tv_descriptionResult;
+    private ImageView iv_photo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +30,11 @@ public class showPersonActivity extends AppCompatActivity {
         tv_birthdayResult = (TextView) findViewById(R.id.tv_birthdayResult);
         tv_phoneResult = (TextView) findViewById(R.id.tv_phoneResult);
         tv_descriptionResult = (TextView) findViewById(R.id.tv_descriptionResult);
+        iv_photo = (ImageView) findViewById(R.id.iv_photo);
 
-        Person person = getIntent().getParcelableExtra(MainActivity.PERSON_KEY);
+        Intent i = getIntent();
+        Person person = i.getParcelableExtra(MainActivity.PERSON_KEY);
+
 
         tv_fnResult.setText(person.getFirstName());
         tv_lnResult.setText(person.getLastName());
@@ -38,5 +43,6 @@ public class showPersonActivity extends AppCompatActivity {
         tv_descriptionResult.setText(person.getDescription());
         tv_phoneResult.setText(person.getPhone());
         tv_jobResult.setText(person.getJob());
+//        iv_photo.setImageBitmap(person.getPhoto());
     }
 }

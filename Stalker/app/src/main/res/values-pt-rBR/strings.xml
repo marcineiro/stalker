@@ -13,4 +13,6 @@
     <string name="desctiprionKey">Descrição</string>
     <string name="saveKey">Salvar</string>
     <string name="cancelKey">Cancelar</string>
+    <string name="key_photo">Foto</string>
+    <string name="back">Voltar</string>
 </resources>

@@ -1,12 +1,19 @@
 package com.example.murilomarcineiro.stalker;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.murilomarcineiro.stalker.data.DAOPerson;
 import com.example.murilomarcineiro.stalker.model.Person;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        DAOPerson.getINSTANCE();
     }
 
     public void onClickList(View view){
+
         Intent intent = new Intent(getBaseContext(), ListActivity.class);
         intent.putExtra(PERSON_KEY, DAOPerson.getINSTANCE().getPeople());
         startActivity(intent);
@@ -31,4 +39,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NewActivity.class);
         startActivity(intent);
     }
+
 }
