@@ -8,9 +8,15 @@ import java.util.ArrayList;
 
 public class Person implements Parcelable, Serializable {
 
+    private long id;
     private String firstName;
     private String lastName;
     private int age;
+    private  String job;
+    private String birthday;
+    private String phone;
+    private String description;
+    private ArrayList<String> paths;
 
     public ArrayList<String> getPaths() {
         return paths;
@@ -19,21 +25,6 @@ public class Person implements Parcelable, Serializable {
     public void setPaths(ArrayList<String> paths) {
         this.paths = paths;
     }
-
-    private  String job;
-    private String birthday;
-    private String phone;
-    private String description;
-//    private Bitmap photo;
-    private ArrayList<String> paths;
-
-//    public Bitmap getPhoto() {
-//        return photo;
-//    }
-
-//    public void setPhoto(Bitmap photo) {
-//        this.photo = photo;
-//    }
 
     public String getBirthday() {
         return birthday;
@@ -51,9 +42,17 @@ public class Person implements Parcelable, Serializable {
         this.description = description;
     }
 
-    public Person(String firstName, String lastName, String job, int age, String phone,
-                  String birthday, String description, ArrayList<String> photos) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Person(long id, String lastName, String job, int age, String phone, String birthday, String description, ArrayList<String> photos, String firstName) {
         super();
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.job = job;
@@ -65,6 +64,7 @@ public class Person implements Parcelable, Serializable {
     }
 
     protected Person(Parcel in) {
+        id = in.readLong();
         firstName = in.readString();
         lastName = in.readString();
         job = in.readString();
@@ -78,6 +78,7 @@ public class Person implements Parcelable, Serializable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeString(firstName);
         dest.writeString(lastName);
         dest.writeString(job);

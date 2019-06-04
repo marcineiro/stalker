@@ -1,20 +1,14 @@
 package com.example.murilomarcineiro.stalker;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Parcelable;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.murilomarcineiro.stalker.data.DAOPerson;
-import com.example.murilomarcineiro.stalker.data.Empacotamento;
+import com.example.murilomarcineiro.stalker.data.DBHelper;
 import com.example.murilomarcineiro.stalker.model.Person;
 
 import java.util.ArrayList;
@@ -74,12 +68,15 @@ public class NewActivity extends AppCompatActivity {
         String birthday = et_birthday.getText().toString();
         String phone = et_phone.getText().toString();
         String description = et_description.getText().toString();
-        Person p = new Person(firstName,lastName,job,age,phone,birthday,description,this.photos);
 
 
-        DAOPerson.getINSTANCE().addPerson(p);
+        if(!firstName.isEmpty() && !lastName.isEmpty()){
+            DBHelper dbHelper = new DBHelper(this);
+            Person p = new Person(Long.parseLong(Integer.toString(DAOPerson.getPeople(dbHelper).size())), lastName, job, age, phone, birthday, description, this.photos, firstName);
+            DAOPerson.insert(dbHelper, p);
+            finish();
+        }
 
-        Empacotamento.push(DAOPerson.getINSTANCE().getPeople(), "stalked.dat");
         finish();
     }
 
@@ -99,13 +96,13 @@ public class NewActivity extends AppCompatActivity {
         String lastName = et_lastName.getText().toString();
         String i = et_age.getText().toString();
         int age = 0;
-        if(i.length()>1)
+        if(!i.isEmpty())
             age = Integer.parseInt(i);
         String job = et_job.getText().toString();
         String birthday = et_birthday.getText().toString();
         String phone = et_phone.getText().toString();
         String description = et_description.getText().toString();
-        Person p = new Person(firstName,lastName,job,age,phone,birthday,description,this.photos);
+        Person p = new Person(0, lastName, job, age, phone, birthday, description, this.photos, firstName);
         intent.putExtra(MainActivity.PERSON_KEY, (Parcelable) p);
         startActivity(intent);
         finish();

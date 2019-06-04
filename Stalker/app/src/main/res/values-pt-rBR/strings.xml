@@ -15,4 +15,15 @@
     <string name="cancelKey">Cancelar</string>
     <string name="key_photo">Foto</string>
     <string name="back">Voltar</string>
+    <string name="see_photos">Ver fotos</string>
+    <string name="edit">Editar</string>
+    <string name="remove">Remover</string>
+    <string name="remove_person">Você gostaria de remover essa pessoa?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Cancelar</string>
+    <string name="removed_person">"Pessoa removida: "</string>
+    <string name="not_removed_person">Pessoa não removida</string>
+    <string name="edit_contact">Editar pessoa</string>
+    <string name="update_contact">"Pessoa atualizada: "</string>
+    <string name="not_update_contact">Pessoa não atualizada</string>
 </resources>

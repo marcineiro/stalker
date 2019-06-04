@@ -28,7 +28,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListActivity" />
         <activity android:name=".NewActivity" />
-        <activity android:name=".showPersonActivity" />
+        <activity android:name=".ShowPersonActivity" />
 
         <provider
             android:authorities="com.example.stalker"

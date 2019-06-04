@@ -14,4 +14,15 @@
     <string name="cancelKey">Cancel</string>
     <string name="key_photo">Photo</string>
     <string name="back">Back</string>
+    <string name="see_photos">See photos</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="remove_person">Would you like to remove this person?</string>
+    <string name="yes">Yes</string>
+    <string name="no">Cancel</string>
+    <string name="removed_person">Person removed:</string>
+    <string name="not_removed_person">Person not removed</string>
+    <string name="edit_contact">Edit person</string>
+    <string name="update_contact">"Person updated: "</string>
+    <string name="not_update_contact">Person not updated</string>
 </resources>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.murilomarcineiro.stalker.R;
 import com.example.murilomarcineiro.stalker.data.DAOPerson;
+import com.example.murilomarcineiro.stalker.data.DBHelper;
 import com.example.murilomarcineiro.stalker.model.Person;
 
 import java.util.ArrayList;
@@ -17,8 +18,8 @@ public class PeopleListAdapter extends RecyclerView.Adapter<PeopleListViewHolder
     private ArrayList<Person> peopleList;
     private PersonListener listener;
 
-    public PeopleListAdapter(PersonListener personListener){
-        peopleList = DAOPerson.getINSTANCE().getPeople();
+    public PeopleListAdapter(ArrayList<Person> peopleList, PersonListener personListener){
+        this.peopleList = peopleList;
         this.listener = personListener;
     }
 

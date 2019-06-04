@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.murilomarcineiro.stalker.data.DAOPerson;
+import com.example.murilomarcineiro.stalker.data.DBHelper;
 import com.example.murilomarcineiro.stalker.model.Person;
 import com.example.murilomarcineiro.stalker.view.PeopleListAdapter;
 
@@ -27,7 +28,7 @@ public class ListActivity extends AppCompatActivity implements PeopleListAdapter
         setContentView(R.layout.activity_list);
 
         rv_peopleList = (RecyclerView) findViewById(R.id.rv_peopleList);
-        peopleListAdapter = new PeopleListAdapter(this);
+        peopleListAdapter = new PeopleListAdapter(DAOPerson.getPeople(new DBHelper(this)),this);
         rv_peopleList.setLayoutManager(new LinearLayoutManager(this));
         rv_peopleList.setHasFixedSize(true);
         rv_peopleList.setAdapter(peopleListAdapter);
@@ -53,7 +54,7 @@ public class ListActivity extends AppCompatActivity implements PeopleListAdapter
                         infoToast.cancel();
                     infoToast = Toast.makeText(getBaseContext(), person.getFirstName(),Toast.LENGTH_SHORT);
                     infoToast.show();*//*
-                    Intent intent = new Intent(getBaseContext(), showPersonActivity.class);
+                    Intent intent = new Intent(getBaseContext(), ShowPersonActivity.class);
                     intent.putExtra(PERSON_KEY, person);
                     startActivity(intent);
                 }
@@ -64,7 +65,7 @@ public class ListActivity extends AppCompatActivity implements PeopleListAdapter
 
     @Override
     public void onClickPersonListener(Person p) {
-        Intent intent = new Intent(getBaseContext(), showPersonActivity.class);
+        Intent intent = new Intent(getBaseContext(), ShowPersonActivity.class);
         intent.putExtra(PERSON_KEY, (Parcelable) p);
         startActivity(intent);
     }

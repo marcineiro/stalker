@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.murilomarcineiro.stalker.data.DAOPerson;
+import com.example.murilomarcineiro.stalker.data.DBHelper;
 import com.example.murilomarcineiro.stalker.model.Person;
 
 import java.io.IOException;
@@ -24,14 +25,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        DAOPerson.getINSTANCE();
     }
 
     public void onClickList(View view){
-
         Intent intent = new Intent(getBaseContext(), ListActivity.class);
-        intent.putExtra(PERSON_KEY, DAOPerson.getINSTANCE().getPeople());
+        DBHelper dbHelper = new DBHelper(this);
+        intent.putExtra(PERSON_KEY, DAOPerson.getPeople(dbHelper));
         startActivity(intent);
     }
 

@@ -1,137 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".showPersonActivity">
+    tools:context=".ShowPersonActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_photo"
+        <TextView
+            android:id="@+id/tv_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/firstNameKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_fnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/lastNameKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_lnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/ageKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_ageResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/birthdayKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_birthdayResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/jobKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_jobResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/phoneKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_phoneResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"
+            android:text="@string/desctiprionKey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_descriptionResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button6"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars[2]" />
+            android:onClick="onClickEdit"
+            android:text="@string/edit" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/button7"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:onClick="onClickSeePhotos"
+            android:text="@string/see_photos" />
 
-            <TextView
-                android:id="@+id/tv_firstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:text="@string/firstNameKey"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_fnResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tv_lastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:text="@string/lastNameKey"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_lnResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/button8"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickRemove"
+            android:text="@string/remove" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/darker_gray"
-        android:text="@string/ageKey"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_ageResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/tv_job"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/darker_gray"
-        android:text="@string/jobKey"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_jobResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/tv_birthday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/darker_gray"
-        android:text="@string/birthdayKey"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_birthdayResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/tv_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/darker_gray"
-        android:text="@string/phoneKey"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_phoneResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <TextView
-        android:id="@+id/tv_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/darker_gray"
-        android:text="@string/desctiprionKey"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_descriptionResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
